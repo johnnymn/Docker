@@ -48,7 +48,7 @@ RUN php -r "copy('https://getcomposer.org/installer', '/tmp/composer-setup.php')
     php /tmp/composer-setup.php --version=1.1.2 && \
     php -r "unlink('composer-setup.php');"
 
-RUN wget https://github.com/cachethq/Cachet/archive/${cachet_ver}.tar.gz && \
+RUN wget https://github.com/johnnymn/Cachet/archive/${cachet_ver}.tar.gz && \
     tar xzvf ${cachet_ver}.tar.gz --strip-components=1 && \
     chown -R www-data /var/www/html && \
     rm -r ${cachet_ver}.tar.gz && \
