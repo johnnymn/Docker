@@ -29,11 +29,11 @@ RUN sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/php5/fpm/php-fpm.co
 RUN mkdir -p /var/www/html && \
     chown -R www-data /var/www
 
-COPY conf/crontab /etc/cron.d/artisan-schedule
+#COPY conf/crontab /etc/cron.d/artisan-schedule
 COPY entrypoint.sh /sbin/entrypoint.sh
 
-RUN chmod 0644 /etc/cron.d/artisan-schedule && \
-        touch /var/log/cron.log
+#RUN chmod 0644 /etc/cron.d/artisan-schedule && \
+#        touch /var/log/cron.log
 
 RUN adduser www-data sudo && \
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
